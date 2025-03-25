@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>{{ isEditing ? 'Edit Contact' : 'Add New Person' }}</h1>
+  <form (ngSubmit)="saveContact()">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" [(ngModel)]="contact.name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" [(ngModel)]="contact.phone" name="phone" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="contact.email" name="email" required />
+    </div>
+
+    <div class="button-container">
+      <button type="submit" class="btn add-btn">
+        {{ isEditing ? 'Update' : 'Add' }}
+      </button>
+      <button type="button" class="btn reset-btn" (click)="resetForm()">Reset</button>
+    </div>
+  </form>
+</div>
